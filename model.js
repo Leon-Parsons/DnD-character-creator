@@ -1,3 +1,17 @@
+export const raceOptions = {
+    races: ["Dragonborn", "Dwarf", "Elf", "Gnome", "Halfling"],
+    get allRaces() {
+        return this.races;
+    }
+};
+
+export const classOptions = {
+    classes: ["Barbarian", "Bard", "Cleric", "Druid"],
+    get allClasses() {
+        return this.classes;
+    }
+}
+
 export class CharTemplate {
     constructor() {
         this.name = "",
@@ -6,15 +20,11 @@ export class CharTemplate {
     }
 };
 
-//TODO
-// const nameOptions = {
-// };
-
 export function newCharObj() {
-    const char1 = new CharTemplate();
-    char1.name = document.getElementById('name').value;
-    char1.race = document.getElementById('race').value;
-    console.log(char1.name, char1.race);
+    const newChar = new CharTemplate();
+    newChar.name = document.getElementById('name').value;
+    newChar.race = document.getElementById('race').value;
+    console.log(newChar.name, newChar.race);
     console.log("new character created");
 };
 

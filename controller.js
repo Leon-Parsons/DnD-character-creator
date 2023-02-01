@@ -1,11 +1,10 @@
-import { newCharObj } from './model.js';
-import { updateNameText } from './view.js';
+import { newCharObj, raceOptions, classOptions } from './model.js';
+import { fillClassDropDown, fillRaceDropDown } from './view.js';
+
+fillRaceDropDown(raceOptions.allRaces);
+fillClassDropDown(classOptions.classes);
 
 const createChar = document.getElementById('createChar');
-// const randomize = document.getElementById('randomize');
-
-// randomize.addEventListener("click", randomizeName);
-createChar.addEventListener("click", function(){
-    newCharObj()
-    updateNameText()
+createChar.addEventListener("click", function() {
+    newCharObj();
 });
