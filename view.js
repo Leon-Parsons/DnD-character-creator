@@ -1,16 +1,17 @@
-export function fillRaceDropDown(arr) {
-     const raceDropDown = document.getElementById('race');
-  
-    for (let i = 0; i < arr.length; i++) {
-        let newOption = new Option(arr[i]);
-        raceDropDown.add(newOption);
-    };
-};
+const classDropDown = document.getElementById('char-class');
+const raceDropDown = document.getElementById('race');
 
-export function fillClassDropDown(arr) {
-    const classDropDown = document.getElementById('char-class');
-    for(let i = 0; i <arr.length; i++) {
-        const newOption = new Option(arr[i]);
-        classDropDown.add(newOption);
+let dropDowns = [raceDropDown,classDropDown];
+
+// Loops through each array in object by key, adding dropdown options per key
+export function fillRaceDropDown(obj) {
+    const keys = Object.keys(obj);
+    const objArrays = Object.entries(obj);
+    for( let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < objArrays[i][1].length; j ++) {
+            let newOption = new Option(objArrays[i][1][j]);
+            dropDowns[i].add(newOption);
+        }
     }
 };
+
