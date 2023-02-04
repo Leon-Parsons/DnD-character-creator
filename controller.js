@@ -1,8 +1,7 @@
-import { newCharObj, raceOptions, classOptions } from './model.js';
-import { fillClassDropDown, fillRaceDropDown } from './view.js';
+import { newCharObj, charOptions } from './model.js';
+import { fillRaceDropDown } from './view.js';
 
-fillRaceDropDown(raceOptions.allRaces);
-fillClassDropDown(classOptions.classes);
+fillRaceDropDown(charOptions);
 
 const createChar = document.getElementById('createChar');
 createChar.addEventListener("click", function() {

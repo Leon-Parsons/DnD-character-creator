@@ -1,16 +1,10 @@
-export const raceOptions = {
+export const charOptions = {
     races: ["Dragonborn", "Dwarf", "Elf", "Gnome", "Halfling"],
-    get allRaces() {
-        return this.races;
-    }
-};
-
-export const classOptions = {
     classes: ["Barbarian", "Bard", "Cleric", "Druid"],
-    get allClasses() {
-        return this.classes;
-    }
-}
+    alignment: ["Lawful-Good", "Lawful-Neutral", "Lawful-Evil",
+                "Neutral-Good", "True-Neutral", "Neutral-Evil",
+                "Chaotic-Good", "Chaotic-Neutral", "Chaotic-Evil"],
+};
 
 export class CharTemplate {
     constructor() {
