@@ -8,8 +8,8 @@ export const charOptions = {
 };
 
 export const statOptions = {
-    stats:[15,14,13,12,10,8]
-}
+    stats: [15,14,13,12,10,8],
+};
 
 export class CharTemplate {
     constructor() {
