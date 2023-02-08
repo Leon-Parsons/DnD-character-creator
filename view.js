@@ -31,9 +31,29 @@ export function fillStatsDropDown(obj) {
             statDropDowns[j].value = objArrays[0][1][j];
         }
     }
-
-console.log("hi");
-
 };
 
+// export function greyOut(val) {
+//     let numToGreyOut = val;
+//     let i = 3;
 
+//         if (statDropDowns[2].options[i].value == val) {
+//             statDropDowns[2].options[i].disabled = true;
+//         };
+//     console.log(statDropDowns[2].options[i].value);
+// };
+
+
+export function greyOut(val) {
+        // let numToGreyOut = val;
+        // let i = 3;
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 6; j++) {
+                    if (statDropDowns[i].options[j].value == val) {
+                        statDropDowns[i].options[j].disabled = true;
+                    }
+                }
+            }
+            return;
+    };
+    
