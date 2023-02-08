@@ -15,7 +15,6 @@ export function fillOptionsDropDown(obj) {
             optionDropDowns[i].add(newOption);
         }
     }
-    optionDropDowns[2].options[2].disabled = true;
 };
 
 //Fill stats drop downs
@@ -36,11 +35,9 @@ export function fillStatsDropDown(obj) {
 export function greyOut(val) {
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 6; j++) {
-                    if (statDropDowns[i].options[j].value == val) {
+                    if (statDropDowns[i].options[j].value == val.value) {
                         statDropDowns[i].options[j].disabled = true;
-                    } else (
-                        statDropDowns[i].options[j].disabled = false
-                    );
+                    }
                 }
             }
             return;
