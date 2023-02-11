@@ -4,10 +4,10 @@ const statDropDowns = document.getElementsByClassName('stat-dd');
 
 
 // Loops through each array in object by key, adding dropdown options per key
-export function fillOptionsDropDown(obj) {
+export function fillOptionsDropDown(opObj) {
 
-    const keys = Object.keys(obj);
-    const objArrays = Object.entries(obj);
+    const keys = Object.keys(opObj);
+    const objArrays = Object.entries(opObj);
 
     for( let i = 0; i < keys.length; i++) {
         for (let j = 0; j < objArrays[i][1].length; j++) {
@@ -17,11 +17,11 @@ export function fillOptionsDropDown(obj) {
     }
 };
 
-//Fill stats drop downs
-export function fillStatsDropDown(obj) {
+// Fill characters stats drop downs options
+export function fillStatsDropDown(statObj) {
 
-    const keys = Object.keys(obj);
-    const objArrays = Object.entries(obj);
+    const keys = Object.keys(statObj);
+    const objArrays = Object.entries(statObj);
 
     for (let i = 0; i < 6; i++ ) {
         for (let j = 0; j < 6; j++) {
@@ -32,7 +32,7 @@ export function fillStatsDropDown(obj) {
     }
 };
 
-export function greyOut(val) {
+export function disableOp(val) {
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 6; j++) {
                     if (statDropDowns[i].options[j].value == val.value) {
@@ -40,6 +40,5 @@ export function greyOut(val) {
                     }
                 }
             }
-            return;
 };
-    
+
