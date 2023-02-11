@@ -17,7 +17,8 @@ for(let i = 0; i < statOps.length; i++) {
     })
 }
 
-//Fetches the current selected values, creates array to pass to model
+//Fetches the current selected/entered values, creates arrays to pass to 
+//model to create new character object
 const selectedOps = [];
 const selectedStats =[];
 createChar.addEventListener("click", function() {

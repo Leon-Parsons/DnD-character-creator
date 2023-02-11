@@ -38,7 +38,10 @@ export function newCharObj(name, opVals, statVals) {
     newChar.background = opVals[3];
     newChar.strength = statVals[0];
     newChar.dexterity = statVals[1];
-
+    newChar.constitution = statVals[2];
+    newChar.intelligence = statVals[3];
+    newChar.wisdom = statVals[4];
+    newChar.charisma = statVals[5];
     console.log(newChar);
 };
 
