@@ -5,12 +5,13 @@ fillOptionsDropDown(charOptions);
 fillStatsDropDown(statOptions);
 
 const chosenName = document.getElementById('name-input');
-const createChar = document.getElementById('createChar');
 const charOps = document.getElementsByClassName('option-dd');
+const statOps = document.getElementsByClassName('stat-dd');
+
+const createChar = document.getElementById('createChar');
 
 //Loops through the stat select elements, adding event listeners
-//and disables an option if it has already been used
-const statOps = document.getElementsByClassName('stat-dd');
+//to disable an option if it has already been used
 for(let i = 0; i < statOps.length; i++) {
     statOps[i].addEventListener("change", function() {
         disableOp(statOps[i]);
@@ -20,19 +21,16 @@ for(let i = 0; i < statOps.length; i++) {
 //Fetches the current selected/entered values, creates arrays to pass to 
 //model to create new character object
 createChar.addEventListener("click", function() {
-    const selectedOps = [];
-    const selectedStats =[];
+    let allChosenValues = [chosenName.value];
 
     for (let i =0; i < charOps.length; i++) {
-        selectedOps.push(charOps[i].value);
+        allChosenValues.push(charOps[i].value);
     }
     
     for (let i =0; i < statOps.length; i++) {
-        selectedStats.push(statOps[i].value);
+        allChosenValues.push(statOps[i].value);
     }
 
-    //Consolidates all user selected values into one array
-    let allChosenValues = [chosenName.value, ...selectedOps, ...selectedStats];
     newCharObj(allChosenValues);
 });
 

@@ -32,15 +32,14 @@ export class CharTemplate {
 export function newCharObj(allChosenValues) {
     let newChar = new CharTemplate;
 
-    var changeValues = function(newChar){
+    var setValues = function(newChar){
         let i = 0;
         Object.keys(newChar).forEach(function(key) {
         newChar[key] = allChosenValues[i];
         i++;
-    });
+        });
     };
-    changeValues(newChar);
-
+    setValues(newChar);
     console.log(newChar);
 };
 
