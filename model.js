@@ -28,34 +28,19 @@ export class CharTemplate {
     }
 };
 
-//Creates new object with entered values
+//Creates new object, loops through setting the values with user entered values
 export function newCharObj(allChosenValues) {
     let newChar = new CharTemplate;
 
-    newChar.name = allChosenValues[0];
-    newChar.race = allChosenValues[1];
-    newChar.classType = allChosenValues[2];
-    newChar.alignment = allChosenValues[3];
-    newChar.background = allChosenValues[4];
-    newChar.strength = allChosenValues[5];
-    newChar.dexterity = allChosenValues[6];
-    newChar.constitution = allChosenValues[7];
-    newChar.intelligence = allChosenValues[8];
-    newChar.wisdom = allChosenValues[9];
-    newChar.charisma = allChosenValues[10];
+    var changeValues = function(newChar){
+        let i = 0;
+        Object.keys(newChar).forEach(function(key) {
+        newChar[key] = allChosenValues[i];
+        i++;
+    });
+    };
+    changeValues(newChar);
+
     console.log(newChar);
-
-//    const keys = Object.keys(newChar);
-
-//     Object.entries(newChar).forEach(entry => {
-//         let [key,value] = entry;
-
-//         for (let i = 0; i < key.length; i++) {
-//             value = statVals[i];
-//         }
-//         console.log(key, value);
-//     });
-
-    console.log(newChar[2]);
 };
 

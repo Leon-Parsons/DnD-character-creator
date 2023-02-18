@@ -34,6 +34,5 @@ createChar.addEventListener("click", function() {
     //Consolidates all user selected values into one array
     let allChosenValues = [chosenName.value, ...selectedOps, ...selectedStats];
     newCharObj(allChosenValues);
-    console.log(allChosenValues);
 });
 
