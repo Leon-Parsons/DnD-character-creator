@@ -23,14 +23,19 @@ for(let i = 0; i < statOps.length; i++) {
 createChar.addEventListener("click", function() {
     let allChosenValues = [chosenName.value];
 
-    for (let i =0; i < charOps.length; i++) {
-        allChosenValues.push(charOps[i].value);
-    }
-    
-    for (let i =0; i < statOps.length; i++) {
-        allChosenValues.push(statOps[i].value);
-    }
+    if(chosenName.value ===''){
+        alert('Please enter a name');
+    } else {
 
-    newCharObj(allChosenValues);
+        for (let i =0; i < charOps.length; i++) {
+            allChosenValues.push(charOps[i].value);
+        }
+        
+        for (let i =0; i < statOps.length; i++) {
+            allChosenValues.push(statOps[i].value);
+        }
+
+        newCharObj(allChosenValues);
+    }
 });
 
