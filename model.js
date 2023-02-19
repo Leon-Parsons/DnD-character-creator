@@ -1,21 +1,45 @@
+//Selectable values
+export const charOptions = {
+    races: ["Dragonborn", "Dwarf", "Elf", "Gnome", "Halfling"],
+    classes: ["Barbarian", "Bard", "Cleric", "Druid"],
+    alignment: ["Lawful-Good", "Lawful-Neutral", "Lawful-Evil",
+                "Neutral-Good", "True-Neutral", "Neutral-Evil",
+                "Chaotic-Good", "Chaotic-Neutral", "Chaotic-Evil"],
+    background: ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero"],
+};
+
+export const statOptions = {
+    stats: [15,14,13,12,10,8],
+};
+
 export class CharTemplate {
     constructor() {
         this.name = "",
         this.race = "",
-        this.classType = ""
+        this.classType = "",
+        this.alignment = "",
+        this.background = "",
+        this.strength = "",
+        this.dexterity = "",
+        this.constitution = "",
+        this.intelligence = "",
+        this.wisdom = "",
+        this.charisma = ""
     }
 };
 
-//TODO
-// const nameOptions = {
-// };
+//Creates new object, loops through setting the values with user entered values
+export function newCharObj(allChosenValues) {
+    let newChar = new CharTemplate;
 
-export function newCharObj() {
-    const char1 = new CharTemplate();
-    char1.name = document.getElementById('name').value;
-    char1.race = document.getElementById('race').value;
-    console.log(char1.name, char1.race);
-    console.log("new character created");
+    var setValues = function(newChar){
+        let i = 0;
+        Object.keys(newChar).forEach(function(key) {
+        newChar[key] = allChosenValues[i];
+        i++;
+        });
+    };
+    setValues(newChar);
+    console.log(newChar);
 };
-
 
