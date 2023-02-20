@@ -22,10 +22,16 @@ for (let i = 0; i < charOps.length; i++) {
 };
 
 
-
 randStatsBtn.addEventListener("click", function(){
-    let dice4 = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1)); 
-    console.log(dice4);
+    let fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
+    const min = Math.min(...fourD6Roll);
+    const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));
+    console.log(fourD6Roll);
+    let updatedDiceRoll = fourD6Roll;
+    updatedDiceRoll.splice(minToRemove, 1);
+    console.log(updatedDiceRoll);
+    let sumOfDice = updatedDiceRoll[0] + updatedDiceRoll[1] + updatedDiceRoll[2];
+    console.log(sumOfDice);
 });
 
 
