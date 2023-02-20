@@ -8,7 +8,7 @@ export function fillOptionsDropDown(opObj) {
 
     const keys = Object.keys(opObj);
     const objArrays = Object.entries(opObj);
-
+    
     for( let i = 0; i < keys.length; i++) {
         for (let j = 0; j < objArrays[i][1].length; j++) {
             let newOption = new Option(objArrays[i][1][j]);
