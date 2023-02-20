@@ -21,17 +21,23 @@ for (let i = 0; i < charOps.length; i++) {
         });
 };
 
-
-randStatsBtn.addEventListener("click", function(){
-    let fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
-    const min = Math.min(...fourD6Roll);
+function statRandRoll() {
+    const fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
     const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));
-    console.log(fourD6Roll);
-    let updatedDiceRoll = fourD6Roll;
-    updatedDiceRoll.splice(minToRemove, 1);
-    console.log(updatedDiceRoll);
-    let sumOfDice = updatedDiceRoll[0] + updatedDiceRoll[1] + updatedDiceRoll[2];
-    console.log(sumOfDice);
+    // console.log(fourD6Roll);
+    let updatedFourD6 = fourD6Roll.slice();
+    updatedFourD6.splice(minToRemove, 1);
+    let sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
+    // console.log(sumOfDice);
+    return [fourD6Roll, updatedFourD6, sumOfDice];
+}
+
+randStatsBtn.addEventListener("click", function() {
+    for (let i = 0; i < statOps.length; i++) {
+        let rollInfo = statRandRoll();
+        statOps[i].value = rollInfo[2];
+        console.log(rollInfo[2]);
+    }
 });
 
 
