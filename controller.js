@@ -9,6 +9,7 @@ let charOps = document.getElementsByClassName('option-dd');
 const statOps = document.getElementsByClassName('stat-dd');
 const createChar = document.getElementById('createChar');
 let randButtons = document.getElementsByClassName('rand-op-btn');
+const randStatsBtn = document.getElementById('rand-stats-btn');
 
 //Random selection for character options on "Randomize" button click
 for (let i = 0; i < charOps.length; i++) {
@@ -17,13 +18,17 @@ for (let i = 0; i < charOps.length; i++) {
         let opValues = Object.values(charOptions);
         let randNum = Math.floor(Math.random() * opValues[clickedBtn].length);
         charOps[clickedBtn].value = opValues[clickedBtn][randNum];
-        console.log(opValues[clickedBtn]);
         });
 };
 
-for (let i = 0; i < statOps.length; i++) {
 
-}
+
+randStatsBtn.addEventListener("click", function(){
+    let dice4 = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1)); 
+    console.log(dice4);
+});
+
+
 
 //Loops through the stat select elements, adding event listeners
 //to disable an option if it has already been used
