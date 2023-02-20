@@ -1,1 +1,0 @@
-const randomizeBtns = document.getElementsByClassName('random-btn');

@@ -5,10 +5,26 @@ fillOptionsDropDown(charOptions);
 fillStatsDropDown(statOptions);
 
 const chosenName = document.getElementById('name-input');
-const charOps = document.getElementsByClassName('option-dd');
+let charOps = document.getElementsByClassName('option-dd');
 const statOps = document.getElementsByClassName('stat-dd');
 
 const createChar = document.getElementById('createChar');
+
+
+let randClass = document.getElementById('random-class');
+
+
+
+randClass.addEventListener("click", function() {
+    let randNum = Math.floor(Math.random() * charOptions.races.length);
+    charOps[0].value = charOptions.races[randNum];
+});
+
+
+
+
+
+
 
 //Loops through the stat select elements, adding event listeners
 //to disable an option if it has already been used
