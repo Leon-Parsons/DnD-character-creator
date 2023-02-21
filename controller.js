@@ -1,5 +1,5 @@
-import { newCharObj, charOptions, statOptions} from './model.js';
-import { fillOptionsDropDown, fillStatsDropDown, disableOp } from './view.js';
+import { newCharObj, charOptions, statOptions, statRandRoll} from './model.js';
+import { fillOptionsDropDown, fillStatsDropDown, disableOp, fillStatWithRand } from './view.js';
 
 fillOptionsDropDown(charOptions);
 fillStatsDropDown(statOptions);
@@ -21,26 +21,12 @@ for (let i = 0; i < charOps.length; i++) {
         });
 };
 
-function statRandRoll() {
-    const fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
-    const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));
-    // console.log(fourD6Roll);
-    let updatedFourD6 = fourD6Roll.slice();
-    updatedFourD6.splice(minToRemove, 1);
-    let sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
-    // console.log(sumOfDice);
-    return [fourD6Roll, updatedFourD6, sumOfDice];
-}
-
 randStatsBtn.addEventListener("click", function() {
     for (let i = 0; i < statOps.length; i++) {
         let rollInfo = statRandRoll();
-        statOps[i].value = rollInfo[2];
-        console.log(rollInfo[2]);
+        fillStatWithRand(statOptions);
     }
 });
-
-
 
 //Loops through the stat select elements, adding event listeners
 //to disable an option if it has already been used

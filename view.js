@@ -2,7 +2,6 @@
 const optionDropDowns = document.getElementsByClassName('option-dd');
 const statDropDowns = document.getElementsByClassName('stat-dd');
 
-
 // Loops through each array in object by key, adding char option dropdown options per key
 export function fillOptionsDropDown(opObj) {
 
@@ -31,6 +30,14 @@ export function fillStatsDropDown(statObj) {
         }
     }
 };
+
+export function fillStatWithRand(statObj) {
+    const objArrays = Object.entries(statObj);
+    for (let i = 0; i < 6 ; i++) {
+        statDropDowns[i].value = objArrays[0][1][0];
+    }
+}
+
 
 //Disable of stat option functionality
 export function disableOp(val) {
