@@ -24,6 +24,11 @@ export const statOptions = {
     stats: [0,15,14,13,12,10,8]
 };
 
+export const randStatOptions = {
+    stats: [6,34,12,7,9,5]
+}
+
+
 
 export class CharTemplate {
     constructor() {

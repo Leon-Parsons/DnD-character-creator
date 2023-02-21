@@ -31,14 +31,6 @@ export function fillStatsDropDown(statObj) {
     }
 };
 
-export function fillStatWithRand(statObj) {
-    const objArrays = Object.entries(statObj);
-    for (let i = 0; i < 6 ; i++) {
-        statDropDowns[i].value = objArrays[0][1][0];
-    }
-}
-
-
 //Disable of stat option functionality
 export function disableOp(val) {
             for (let i = 0; i < 6; i++) {
