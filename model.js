@@ -17,16 +17,25 @@ export function statRandRoll() {
     let sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
     // console.log(sumOfDice);
 
-    return [fourD6Roll, updatedFourD6, sumOfDice];
+    // let rollInfo = [fourD6Roll, updatedFourD6, sumOfDice];
+    return sumOfDice;
 };
 
 export const statOptions = {
-    stats: [0,15,14,13,12,10,8]
+    stats: [15,14,13,12,10,8]
 };
 
-export const randStatOptions = {
-    stats: [6,34,12,7,9,5]
-}
+export function makeRandStatArray() {
+    let randArray = [];
+    for(let i = 0; i < 6; i++) {
+        randArray.push(statRandRoll());
+    }
+    let randStatsOptions = {
+        stats: [...randArray]
+    }
+
+    return randStatsOptions;
+};
 
 
 

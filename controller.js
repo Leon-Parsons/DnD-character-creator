@@ -1,5 +1,5 @@
 import { newCharObj, charOptions, statOptions,
-randStatOptions} from './model.js';
+     makeRandStatArray } from './model.js';
 import { fillOptionsDropDown, fillStatsDropDown, disableOp } from './view.js';
 
 fillOptionsDropDown(charOptions);
@@ -22,8 +22,9 @@ for (let i = 0; i < charOps.length; i++) {
         });
 };
 
+//Fills stat dropdowns with an array of random numbers
 randStatsBtn.addEventListener("click", function() {
-    fillStatsDropDown(randStatOptions);
+    fillStatsDropDown(makeRandStatArray());
 });
 
 //Loops through the stat select elements, adding event listeners

@@ -29,6 +29,8 @@ export function fillStatsDropDown(statObj) {
             statDropDowns[j].value = objArrays[0][1][j];
         }
     }
+
+    console.log(objArrays[0][1]);
 };
 
 //Disable of stat option functionality
