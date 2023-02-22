@@ -11,30 +11,33 @@ export const charOptions = {
 export function statRandRoll() {
     const fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
     const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));
-    // console.log(fourD6Roll);
-    let updatedFourD6 = fourD6Roll.slice();
+    const updatedFourD6 = fourD6Roll.slice();
     updatedFourD6.splice(minToRemove, 1);
-    let sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
-    // console.log(sumOfDice);
-
-    // let rollInfo = [fourD6Roll, updatedFourD6, sumOfDice];
-    return sumOfDice;
+    const sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
+    const rollInfo = [fourD6Roll, updatedFourD6, sumOfDice];
+    return rollInfo;
 };
 
 export const statOptions = {
     stats: [15,14,13,12,10,8]
 };
 
-export function makeRandStatArray() {
-    let randArray = [];
+export function generateRandStats() {
+    const diceRolled = [];
+    const diceAdjusted = [];
+    const randResult = [];
     for(let i = 0; i < 6; i++) {
-        randArray.push(statRandRoll());
+        let diceInfo = statRandRoll();
+        diceRolled.push(diceInfo[0]);
+        diceAdjusted.push(diceInfo[1]);
+        randResult.push(diceInfo[2]);
     }
-    let randStatsOptions = {
-        stats: [...randArray]
+    console.log(diceRolled);
+    const randStatsOptions = {
+        stats: [...randResult]
     }
-
-    return randStatsOptions;
+    const allRandData = [diceRolled,diceAdjusted,randStatsOptions];
+    return allRandData;
 };
 
 
