@@ -1,6 +1,7 @@
 //Select (dropdown elements) retrieved by class
 const optionDropDowns = document.getElementsByClassName('option-dd');
 const statDropDowns = document.getElementsByClassName('stat-dd');
+const randRollDis = document.getElementsByClassName('dis-roll');
 
 // Loops through each array in object by key, adding char option dropdown options per key
 export function fillOptionsDropDown(opObj) {
@@ -15,7 +16,6 @@ export function fillOptionsDropDown(opObj) {
         }
     }
 };
-
 // Fill characters stats drop downs options
 export function fillStatsDropDown(statObj) {
 
@@ -31,7 +31,9 @@ export function fillStatsDropDown(statObj) {
     }
 
     console.log(objArrays[0][1]);
+    return objArrays[0][1];
 };
+
 
 //Disable of stat option functionality
 export function disableOp(val) {
@@ -44,3 +46,14 @@ export function disableOp(val) {
             }
 };
 
+export function displayRandRollInfo(vals) {
+    const randTotal = Object.values(vals[2]);
+    console.log(randTotal);
+    for(let i = 0; i <6; i++) {
+        randRollDis[i].textContent = 
+        `You rolled: ${vals[0][i]}... 
+        The roll with the lowest dice removed: ${vals[1][i]}...
+        The sum of these three dice = ${randTotal[0][i]}`;
+    }
+
+};
