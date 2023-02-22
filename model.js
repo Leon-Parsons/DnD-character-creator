@@ -12,6 +12,11 @@ export const statOptions = {
     stats: [15,14,13,12,10,8]
 };
 
+export const randNameOptions = {
+    firstName: ["Jorr", "Keela", "Jeroy", "Rishka", "Leer", "Kall"],
+    lastName: ["Rorrison", "Gorrax", "Karlo", "Torak", "Raddok"]
+}
+
 export function statRandRoll() {
     const fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
     const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));

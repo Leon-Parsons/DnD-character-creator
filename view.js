@@ -1,6 +1,11 @@
 const optionDropDowns = document.getElementsByClassName('option-dd');
 const statDropDowns = document.getElementsByClassName('stat-dd');
 const randRollDis = document.getElementsByClassName('dis-roll');
+const nameField = document.getElementById('name-input');
+
+export function updateRandName(name) {
+    nameField.value = name;
+}
 
 // Fills char option dropdown options
 export function fillOptionsDropDown(opObj) {
