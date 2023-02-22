@@ -11,6 +11,7 @@ const createChar = document.getElementById('createChar');
 let randButtons = document.getElementsByClassName('rand-op-btn');
 const randStatsBtn = document.getElementById('rand-stats-btn');
 const randNameButton = document.getElementById('rand-name');
+const randAllBtn = document.getElementById('random-all');
 
 //Random selection for character options on "Randomize" button click
 for (let i = 0; i < charOps.length; i++) {
@@ -22,21 +23,37 @@ for (let i = 0; i < charOps.length; i++) {
         });
 };
 
-randStatsBtn.addEventListener("click", function() {
+
+function setRandStats() {
     const randStatData = generateRandStats();
     fillStatsDropDown(randStatData[2]);
     displayRandRollInfo(randStatData);
-});
+};
 
-randNameButton.addEventListener("click", function(){
+function setRandName() {
     let vals = Object.values(randNameOptions);
     let randNumFn = Math.floor(Math.random() * vals[0].length);
     let randNumLn = Math.floor(Math.random() * vals[1].length);
     let randFullName = vals[0][randNumFn].concat(" ", vals[1][randNumLn]);
     console.log(randFullName);
     updateRandName(randFullName);
-})
+};
 
+
+randStatsBtn.addEventListener("click", function() {
+    setRandStats();
+});
+
+randNameButton.addEventListener("click", function(){
+    setRandName();
+});
+
+randAllBtn.addEventListener("click", function(){
+    setRandStats();
+    setRandName();
+});
+
+//Disable option
 for(let i = 0; i < statOps.length; i++) {
     statOps[i].addEventListener("change", function() {
         disableOp(statOps[i]);
