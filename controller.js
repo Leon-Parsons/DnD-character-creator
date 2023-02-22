@@ -1,5 +1,4 @@
-import { newCharObj, charOptions, statOptions,
-     generateRandStats } from './model.js';
+import { newCharObj, charOptions, statOptions, generateRandStats } from './model.js';
 import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo } from './view.js';
 
 fillOptionsDropDown(charOptions);
@@ -22,38 +21,31 @@ for (let i = 0; i < charOps.length; i++) {
         });
 };
 
-//Fills stat dropdowns with an array of random numbers
 randStatsBtn.addEventListener("click", function() {
     const randStatData = generateRandStats();
     fillStatsDropDown(randStatData[2]);
     displayRandRollInfo(randStatData);
 });
 
-//Loops through the stat select elements, adding event listeners
-//to disable an option if it has already been used
 for(let i = 0; i < statOps.length; i++) {
     statOps[i].addEventListener("change", function() {
         disableOp(statOps[i]);
     })
 }
 
-//Fetches the current selected/entered values, creates arrays to pass to 
-//model to create new character object
+//Creates array of current selected/entered values, this is passed to model
 createChar.addEventListener("click", function() {
     let allChosenValues = [chosenName.value];
 
     if(chosenName.value ===''){
         alert('Please enter a name');
     } else {
-
         for (let i =0; i < charOps.length; i++) {
             allChosenValues.push(charOps[i].value);
         }
-        
         for (let i =0; i < statOps.length; i++) {
             allChosenValues.push(statOps[i].value);
         }
-
         newCharObj(allChosenValues);
     }
 });

@@ -8,6 +8,10 @@ export const charOptions = {
     background: ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero"],
 };
 
+export const statOptions = {
+    stats: [15,14,13,12,10,8]
+};
+
 export function statRandRoll() {
     const fourD6Roll = Array.from({length: 4}, () => Math.floor(Math.random() * (7 - 1) + 1));
     const minToRemove = fourD6Roll.indexOf(Math.min(...fourD6Roll));
@@ -16,10 +20,6 @@ export function statRandRoll() {
     const sumOfDice = updatedFourD6[0] + updatedFourD6[1] + updatedFourD6[2];
     const rollInfo = [fourD6Roll, updatedFourD6, sumOfDice];
     return rollInfo;
-};
-
-export const statOptions = {
-    stats: [15,14,13,12,10,8]
 };
 
 export function generateRandStats() {
@@ -32,15 +32,12 @@ export function generateRandStats() {
         diceAdjusted.push(diceInfo[1]);
         randResult.push(diceInfo[2]);
     }
-    console.log(diceRolled);
     const randStatsOptions = {
         stats: [...randResult]
     }
     const allRandData = [diceRolled,diceAdjusted,randStatsOptions];
     return allRandData;
 };
-
-
 
 export class CharTemplate {
     constructor() {
@@ -61,7 +58,6 @@ export class CharTemplate {
 //Creates new object, loops through setting the values with user entered values
 export function newCharObj(allChosenValues) {
     let newChar = new CharTemplate;
-
     var setValues = function(newChar){
         let i = 0;
         Object.keys(newChar).forEach(function(key) {
