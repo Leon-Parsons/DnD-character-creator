@@ -36,12 +36,13 @@ function setRandName() {
     updateRandName(randFullName);
 };
 
-randNameButton.addEventListener("click", function(){
+randAllBtn.addEventListener("click", function(){
     setRandName();
+    setRandStats();
 });
 
-randStatsBtn.addEventListener("click", function(){
-    setRandStats();
+randNameButton.addEventListener("click", function(){
+    setRandName();
 });
 
 const randOps = document.querySelectorAll('.rand-op-btn');
@@ -52,6 +53,9 @@ const randOps = document.querySelectorAll('.rand-op-btn');
     });
 });
 
+randStatsBtn.addEventListener("click", function(){
+    setRandStats();
+});
 
 //Disable option
 for(let i = 0; i < statOps.length; i++) {
