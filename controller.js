@@ -8,22 +8,19 @@ const charName = document.getElementById('name-input');
 let charOps = document.getElementsByClassName('option-dd');
 const statOps = document.getElementsByClassName('stat-dd');
 const createChar = document.getElementById('createChar');
-let randButtons = document.getElementsByClassName('rand-op-btn');
+const randOpsBtns = document.getElementsByClassName('rand-op-btn');
 const randStatsBtn = document.getElementById('rand-stats-btn');
 const randNameButton = document.getElementById('rand-name');
 const randAllBtn = document.getElementById('random-all');
 
-//Random selection for character options on "Randomize" button click
-for (let i = 0; i < charOps.length; i++) {
-    randButtons[i].addEventListener("click", function() {
-        let clickedBtn = this.id;
+function setRandOps(val) {
+    for (let i = 0; i < charOps.length; i++) {
+        let clickedBtn = val;
         let opValues = Object.values(charOptions);
         let randNum = Math.floor(Math.random() * opValues[clickedBtn].length);
         charOps[clickedBtn].value = opValues[clickedBtn][randNum];
-        });
-};
-
-
+    };
+}
 function setRandStats() {
     const randStatData = generateRandStats();
     fillStatsDropDown(randStatData[2]);
@@ -39,19 +36,22 @@ function setRandName() {
     updateRandName(randFullName);
 };
 
-
-randStatsBtn.addEventListener("click", function() {
-    setRandStats();
-});
-
 randNameButton.addEventListener("click", function(){
     setRandName();
 });
 
-randAllBtn.addEventListener("click", function(){
+randStatsBtn.addEventListener("click", function(){
     setRandStats();
-    setRandName();
 });
+
+const randOps = document.querySelectorAll('.rand-op-btn');
+    randOps.forEach(randOps => {
+    randOps.addEventListener('click', function() {
+        console.log('box clicked');
+        setRandOps(this.id);
+    });
+});
+
 
 //Disable option
 for(let i = 0; i < statOps.length; i++) {
