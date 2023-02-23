@@ -21,6 +21,7 @@ function setRandOps(val) {
         charOps[clickedBtn].value = opValues[clickedBtn][randNum];
     };
 }
+
 function setRandStats() {
     const randStatData = generateRandStats();
     fillStatsDropDown(randStatData[2]);
@@ -39,6 +40,9 @@ function setRandName() {
 randAllBtn.addEventListener("click", function(){
     setRandName();
     setRandStats();
+    for(let i = 0; i < 4; i++) {
+        randOpsBtns[i].click();
+    }
 });
 
 randNameButton.addEventListener("click", function(){
@@ -48,7 +52,7 @@ randNameButton.addEventListener("click", function(){
 const randOps = document.querySelectorAll('.rand-op-btn');
     randOps.forEach(randOps => {
     randOps.addEventListener('click', function() {
-        console.log('box clicked');
+        console.log('clicked');
         setRandOps(this.id);
     });
 });
