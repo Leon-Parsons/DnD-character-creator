@@ -1,5 +1,5 @@
 import { newCharObj, charOptions, statOptions, generateRandStats, randNameOptions} from './model.js';
-import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo, updateRandName } from './view.js';
+import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo, updateRandName, disableAllStatOps, enableAllStatsOps } from './view.js';
 
 fillOptionsDropDown(charOptions);
 fillStatsDropDown(statOptions);
@@ -12,6 +12,7 @@ const randOpsBtns = document.getElementsByClassName('rand-op-btn');
 const randStatsBtn = document.getElementById('rand-stats-btn');
 const randNameButton = document.getElementById('rand-name');
 const randAllBtn = document.getElementById('random-all');
+const statsTemplateVals = document.getElementById('stats-temp-vals');
 
 function setRandOps(val) {
     for (let i = 0; i < charOps.length; i++) {
@@ -43,11 +44,20 @@ randAllBtn.addEventListener("click", function(){
     for(let i = 0; i < 4; i++) {
         randOpsBtns[i].click();
     }
+    disableAllStatOps();
+});
+
+statsTemplateVals.addEventListener("click", function() {
+    fillStatsDropDown(statOptions);
+    enableAllStatsOps();
 });
 
 randNameButton.addEventListener("click", setRandName);
 
-randStatsBtn.addEventListener("click",setRandStats);
+randStatsBtn.addEventListener("click", function(){
+    setRandStats();
+    disableAllStatOps();
+});
 
 const randOps = document.querySelectorAll('.rand-op-btn');
     randOps.forEach(randOps => {

@@ -16,7 +16,7 @@ export function fillOptionsDropDown(opObj) {
         for (let j = 0; j < objArrays[i][1].length; j++) {
             let newOption = new Option(objArrays[i][1][j]);
             optionDropDowns[i].add(newOption);
-        }
+            }
     }
 };
 
@@ -24,8 +24,8 @@ export function fillOptionsDropDown(opObj) {
 export function fillStatsDropDown(statObj) {
     const keys = Object.keys(statObj);
     const objArrays = Object.entries(statObj);
-
     for (let i = 0; i < 6; i++ ) {
+        statDropDowns[i].innerHTML = "";
         for (let j = 0; j < 6; j++) {
             let newStatOption = new Option(objArrays[0][1][j]);
             statDropDowns[i].add(newStatOption);
@@ -45,6 +45,19 @@ export function disableOp(val) {
         }
     }
 };
+
+export function disableAllStatOps() {
+    for(let i = 0; i < statDropDowns.length; i++) {
+        statDropDowns[i].disabled = true;
+    }
+};
+
+export function enableAllStatsOps() {
+    for(let i = 0; i < statDropDowns.length; i++) {
+        statDropDowns[i].disabled = false;
+
+    }
+}
 
 //Displays rand stat dice roll information
 export function displayRandRollInfo(vals) {
