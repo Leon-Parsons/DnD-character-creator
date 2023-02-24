@@ -45,20 +45,15 @@ randAllBtn.addEventListener("click", function(){
     }
 });
 
-randNameButton.addEventListener("click", function(){
-    setRandName();
-});
+randNameButton.addEventListener("click", setRandName);
+
+randStatsBtn.addEventListener("click",setRandStats);
 
 const randOps = document.querySelectorAll('.rand-op-btn');
     randOps.forEach(randOps => {
     randOps.addEventListener('click', function() {
-        console.log('clicked');
         setRandOps(this.id);
     });
-});
-
-randStatsBtn.addEventListener("click", function(){
-    setRandStats();
 });
 
 //Disable option
