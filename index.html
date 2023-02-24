@@ -4,34 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dungeons & Dragons Character Creator</title>
 </head>
 <body>
     <div id="char-options">
         <h2 id="details-title">Character Details</h2>
-        <button class="random-btn" id="random-all">Randomize All Fields</button>
         <h4 id = "dis-name">Name</h4>
         <input id="name-input" title="char-name">
         <button class="random-name" id="rand-name">Randomize</button>
-        <br>
         <h4 id = "race-label">Race</h4>
         <select class="option-dd" id="race-dd"></select>
         <button class="rand-op-btn" id=0>Randomize</button>
-        <br> 
         <h4 id ="class-label">Class</h4>
         <select class="option-dd" id="class-dd"></select>
         <button class="rand-op-btn" id=1>Randomize</button>
-        <br>
         <h4 id="alignment-label">Alignment</h4>
         <select class="option-dd" id="alignment-dd"></select>
         <button class="rand-op-btn" id=2>Randomize</button>
-        <br>
-        <br>
         <h4 id = "background-label">Background</h4>
         <select class="option-dd" id="background-dd"></select>
         <button class="rand-op-btn" id=3>Randomize</button>
-        <br>
-        <br>
     </div>
     <div id="char-stats">
         <h2 id = "stats-title">Character Stats</h4>
@@ -56,10 +48,10 @@
         <h5 class="dis-roll" id="dis-cha-roll"></h5>
         <select class="stat-dd" id="cha-dd"></select>
     </div>
-
-    <br>
-    <br>
+    <div id="main-btns">
+    <button class="random-btn" id="random-all">Randomize All Fields</button>
     <button id="createChar">New Character</button>
+    </div>
 
     <script type="module" src="controller.js"></script>
     <script type="module" src="model.js"></script>
