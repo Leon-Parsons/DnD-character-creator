@@ -1,11 +1,11 @@
 import { newCharObj, charOptions, statOptions, generateRandStats, randNameOptions} from './model.js';
-import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo, updateRandName, disableAllStatOps, enableAllStatsOps } from './view.js';
+import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo, updateRandName, statsState} from './view.js';
 
 fillOptionsDropDown(charOptions);
 fillStatsDropDown(statOptions);
 
 const charName = document.getElementById('name-input');
-let charOps = document.getElementsByClassName('option-dd');
+const charOps = document.getElementsByClassName('option-dd');
 const statOps = document.getElementsByClassName('stat-dd');
 const createChar = document.getElementById('createChar');
 const randOpsBtns = document.getElementsByClassName('rand-op-btn');
@@ -21,7 +21,7 @@ function setRandOps(val) {
         let randNum = Math.floor(Math.random() * opValues[clickedBtn].length);
         charOps[clickedBtn].value = opValues[clickedBtn][randNum];
     };
-}
+};
 
 function setRandStats() {
     const randStatData = generateRandStats();
@@ -44,19 +44,19 @@ randAllBtn.addEventListener("click", function(){
     for(let i = 0; i < 4; i++) {
         randOpsBtns[i].click();
     }
-    disableAllStatOps();
+    statsState(true);
 });
 
 statsTemplateVals.addEventListener("click", function() {
     fillStatsDropDown(statOptions);
-    enableAllStatsOps();
+    statsState(false);
 });
 
 randNameButton.addEventListener("click", setRandName);
 
 randStatsBtn.addEventListener("click", function(){
     setRandStats();
-    disableAllStatOps();
+    statsState(true);
 });
 
 const randOps = document.querySelectorAll('.rand-op-btn');
@@ -75,8 +75,7 @@ for(let i = 0; i < statOps.length; i++) {
 
 //Creates array of current selected/entered values, this is passed to model
 createChar.addEventListener("click", function() {
-    let allChosenValues = [charName.value];
-
+    const allChosenValues = [charName.value];
     if(charName.value ===''){
         alert('Please enter a name');
     } else {
