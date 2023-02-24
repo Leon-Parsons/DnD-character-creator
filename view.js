@@ -45,7 +45,7 @@ export function disableOp(val) {
     }
 };
 
-export function statsState(val) {
+export function statsDisabled(val) {
     for(let i = 0; i < statDropDowns.length; i++) {
         statDropDowns[i].disabled = val;
     }
