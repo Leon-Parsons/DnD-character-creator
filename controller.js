@@ -1,5 +1,5 @@
 import { newCharObj, charOptions, statOptions} from './model.js';
-import { fillOptionsDropDown, fillStatsDropDown, disableOp, displayRandRollInfo, updateRandName, statsDisabled} from './view.js';
+import { fillOptionsDropDown, fillStatsDropDown, disableOp, statsDisabled} from './view.js';
 import { setRandOps, setRandName, setRandStats } from './randomize.js';
 
 fillOptionsDropDown(charOptions);

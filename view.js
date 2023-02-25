@@ -34,7 +34,7 @@ export function fillStatsDropDown(statObj) {
     return objArrays[0][1];
 };
 
-//Disable of stat drop down option (if already selected)
+//Disable of stat drop down options
 export function disableOp(val) {
     for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 6; j++) {
