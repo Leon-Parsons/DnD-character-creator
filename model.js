@@ -9,9 +9,13 @@ export const charOptions = {
 };
 
 export const statOptions = {
-    stats: [15,14,13,12,10,8],
+    stats: [15,14,13,12,10,8]
 };
 
+export const randNameOptions = {
+    firstName: ["Jorr", "Keela", "Jeroy", "Rishka", "Leer", "Kall"],
+    lastName: ["Rorrison", "Gorrax", "Karlo", "Torak", "Raddok"]
+}
 export class CharTemplate {
     constructor() {
         this.name = "",
@@ -31,7 +35,6 @@ export class CharTemplate {
 //Creates new object, loops through setting the values with user entered values
 export function newCharObj(allChosenValues) {
     let newChar = new CharTemplate;
-
     var setValues = function(newChar){
         let i = 0;
         Object.keys(newChar).forEach(function(key) {
@@ -42,4 +45,5 @@ export function newCharObj(allChosenValues) {
     setValues(newChar);
     console.log(newChar);
 };
+
 
