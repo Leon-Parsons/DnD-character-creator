@@ -4,9 +4,13 @@
     padding: 0;
 }
 
-.rand-op-btn, .random-name, .random-btn, .new-char-btn, .stats-temp-btn {
-    margin: 5px;
-    padding: 5px;
+#header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    margin-bottom: 20px;
 }
 
 #page {
@@ -14,9 +18,10 @@
     justify-content: space-around;
 }
 
-#main-btns {
-    display: flex;
-    justify-content: center;
+#page button, #main-btns button {
+    background-color: lightblue;
+    margin: 5px;
+    padding: 7px;
 }
 
 #char-options {
@@ -25,4 +30,24 @@
 
 #char-stats {
     padding-right: 100px;
+    display: flex;
+}
+
+#stats-dis-div {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#stats-btns-div {
+    display: flex;
+    align-items: center;
+}
+
+#char-options input {
+    padding: 5px;
+}
+
+#main-btns {
+    display: flex;
+    justify-content: center;
 }

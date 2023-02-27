@@ -8,8 +8,12 @@
     <title>Dungeons & Dragons Character Creator</title>
 </head>
 <body>
+    <div id="header">
+        <h1>Dungeons & Dragons Character Creator</h1>
+        <!-- <p>Create the character of your dreams, let the fates decide, or a little bit of both</p> -->
+    </div>
     <div id="page">
-        <div id="char-options">
+        <div class="char-section" id="char-options">
             <h2 id="details-title">Character Details</h2>
             <h4 id = "dis-name">Name</h4>
             <input id="name-input" title="char-name">
@@ -27,28 +31,32 @@
             <select class="option-dd" id="background-dd"></select>
             <button class="rand-op-btn" id=3>Randomize</button>
         </div>
-        <div id="char-stats">
-            <h2 id = "stats-title">Character Stats</h4>
-            <button class="random-btn" id="rand-stats-btn">Randomize</button>
-            <button class="stats-temp-btn" id="stats-temp-vals">Template Values</button>
-            <h4 id="str-lb">Strength</h4>
-            <h5 class="dis-roll" id="dis-str-roll"></h5>
-            <select class="stat-dd" id="str-dd"></select>
-            <h4 id="dex-lb">Dexterity</h4>
-            <h5 class="dis-roll" id="dis-dex-roll"></h5>
-            <select class="stat-dd" id="dex-dd"></select>
-            <h4 id="con-lb">Constitution</h4>
-            <h5 class="dis-roll" id="dis-con-roll"></h5>
-            <select class="stat-dd" id="con-dd"></select>
-            <h4 id="int-lb">Intelligence</h4>
-            <h5 class="dis-roll" id="dis-int-roll"></h5>
-            <select class="stat-dd" id ="int-dd"></select>
-            <h4 id="wis-lb">Wisdom</h4>
-            <h5 class="dis-roll" id="dis-wis-roll"></h5>
-            <select class="stat-dd" id="wis-dd"></select>
-            <h4 id="char-lb">Charisma</h4>
-            <h5 class="dis-roll" id="dis-cha-roll"></h5>
-            <select class="stat-dd" id="cha-dd"></select>
+        <div class="char-section" id="char-stats">
+            <div id="stats-dis-div">
+                <h2 id = "stats-title">Character Stats</h4>
+                <h4 id="str-lb">Strength</h4>
+                <h5 class="dis-roll" id="dis-str-roll"></h5>
+                <select class="stat-dd" id="str-dd"></select>
+                <h4 id="dex-lb">Dexterity</h4>
+                <h5 class="dis-roll" id="dis-dex-roll"></h5>
+                <select class="stat-dd" id="dex-dd"></select>
+                <h4 id="con-lb">Constitution</h4>
+                <h5 class="dis-roll" id="dis-con-roll"></h5>
+                <select class="stat-dd" id="con-dd"></select>
+                <h4 id="int-lb">Intelligence</h4>
+                <h5 class="dis-roll" id="dis-int-roll"></h5>
+                <select class="stat-dd" id ="int-dd"></select>
+                <h4 id="wis-lb">Wisdom</h4>
+                <h5 class="dis-roll" id="dis-wis-roll"></h5>
+                <select class="stat-dd" id="wis-dd"></select>
+                <h4 id="char-lb">Charisma</h4>
+                <h5 class="dis-roll" id="dis-cha-roll"></h5>
+                <select class="stat-dd" id="cha-dd"></select>
+                </div>
+            <div id="stats-btns-div">
+                <button class="random-btn" id="rand-stats-btn">Randomize</button>
+                <button class="stats-temp-btn" id="stats-temp-vals">Template Values</button>
+            </div>
         </div>
     </div>
     <div id="main-btns">
