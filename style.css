@@ -1,0 +1,28 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.rand-op-btn, .random-name, .random-btn, .new-char-btn, .stats-temp-btn {
+    margin: 5px;
+    padding: 5px;
+}
+
+#page {
+    display: flex;
+    justify-content: space-around;
+}
+
+#main-btns {
+    display: flex;
+    justify-content: center;
+}
+
+#char-options {
+    padding-left: 100px;
+}
+
+#char-stats {
+    padding-right: 100px;
+}
