@@ -1,5 +1,5 @@
 import { charOptions, randNameOptions} from './model.js';
-import { fillStatsDropDown, displayRandRollInfo, updateRandName} from './view.js';
+import { fillStatsDropDown, updateRandName} from './view.js';
 
 const charOps = document.getElementsByClassName('option-dd');
 
@@ -33,7 +33,7 @@ function generateRandStats() {
 export function setRandStats() {
     const randStatData = generateRandStats();
     fillStatsDropDown(randStatData[2]);
-    displayRandRollInfo(randStatData);
+    // displayRandRollInfo(randStatData);
 };
 
 export function setRandOps(clickedBtn) {
