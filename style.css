@@ -17,13 +17,19 @@ html, body {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: black;
+    background-color: rgb(21, 20, 37);
 }
 
 #page h2 {
-    font-size: 25px;
+    font-size: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#page h4 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 3px;
 }
 
 #whole-page {
@@ -48,16 +54,18 @@ html, body {
     margin-bottom: 10px;
     padding: 7px;
     max-width: 130px;
+    transition-duration: 0.4s;
 }
 
-/* .char-section {
-    display: grid;
-    align-content: space-between;
-} */
+#whole-page button:hover {
+    background-color: rgb(21, 20, 37);
+    color: white;
+}
 
 .char-section {
     margin: 40px;
 }
+
 #char-options {
     display: grid;
     align-content: space-between;
@@ -65,9 +73,6 @@ html, body {
 }
 
 #stats-dis-div {
-    /* flex-direction: column;
-    justify-content: space-between;
-    height: 100%; */
     display: grid;
     align-content: space-between;
     height: 80%;
@@ -76,6 +81,11 @@ html, body {
 
 #char-options input {
     padding: 2px;
+}
+
+#page select, #page input {
+    border-radius: 10px;
+    border-color: transparent;
 }
 
 #main-btns {
@@ -96,6 +106,6 @@ html, body {
 }
 
 #stats-dis-div select {
-    max-width: 50px;
+    max-width: 40px;
 }
 
