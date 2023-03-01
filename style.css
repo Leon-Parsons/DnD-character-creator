@@ -2,24 +2,39 @@
     box-sizing: 0;
     margin: 0;
     padding: 0;
+    font-family: Verdana, Helvetica, sans-serif;
 }
 
 #header {
+    font-size: 16px;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: beige;
-    margin-bottom: 20px;
+    color: white;
+    background-color: black;
+}
+
+#page h2 {
+    font-size: 25px;
+    margin: 20px;
 }
 
 #page {
+    color: white;
+    background: url("Images/background-edited.png");
+    background-position-y: -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: space-around;
+    height: 500px;
 }
 
 #page button, #main-btns button {
-    background-color: lightblue;
+    color: white;
+    border-color: white;
+    background-color: transparent;
     margin: 5px;
     padding: 7px;
 }
