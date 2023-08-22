@@ -66,7 +66,18 @@
         </div>
 
         <div class="char-popup" id="char-popup">
-            <h2>Pop Up Title</h2>
+            <h2 class="popup-content" id = "pu-name">Name:</h2>
+            <h4 class="popup-content" id = "pu-race">Race:</h4>
+            <h4 class="popup-content" id ="pu-class">Class:</h4>
+            <h4 class="popup-content" id="pu-alignment">Alignment:</h4>
+            <h4 class="popup-content" id="pu-background">Backgrpund:</h4>
+            <h4 class="popup-content" id="pu-str">Strength:</h4>
+            <h4 class="popup-content" id="pu-dex">Dexterity:</h4>
+            <h4 class="popup-content" id="pu-con">Constitution:</h4>
+            <h4 class="popup-content" id="pu-int">Intelligence:</h4>
+            <h4 class="popup-content" id="pu-wis">Wisdom:</h4>
+            <h4 class="popup-content" id="pu-char">Charisma:</h4>
+  
             <button id="close-char-popup" onClick="closePopup()">close</button>
         </div>
     </div>
@@ -77,7 +88,6 @@
 
     <!-- Create character pop up -->
     <script>
-
         const createCharPopup = document.getElementById('char-popup')
         function openPopup(){
             createCharPopup.classList.add("open-char-popup");
@@ -85,7 +95,6 @@
         function closePopup(){
             createCharPopup.classList.remove("open-char-popup");
         }
-
     </script>
 
 </body>

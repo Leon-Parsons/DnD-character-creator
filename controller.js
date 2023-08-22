@@ -15,6 +15,9 @@ const randNameButton = document.getElementById('rand-name');
 const randAllBtn = document.getElementById('random-all');
 const statsTemplateVals = document.getElementById('stats-temp-vals');
 
+const popUpCharDetails = document.getElementsByClassName("popup-content");
+console.log(popUpCharDetails);
+
 randAllBtn.addEventListener("click", function(){
     setRandName();
     setRandStats();
@@ -63,6 +66,9 @@ createChar.addEventListener("click", function() {
             allChosenValues.push(statOps[i].value);
         }
         newCharObj(allChosenValues);
+
+        for (let i = 0; i < (popUpCharDetails.length+1); i++) {
+        popUpCharDetails[i].innerHTML = (popUpCharDetails[i].innerHTML + "   " + allChosenValues[i])}
     }
 });
 
