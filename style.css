@@ -33,7 +33,7 @@ html, body {
 }
 
 #whole-page {
-    height: 90%;
+    height: 100%;
     color: white;
     background: url("Images/dnd\ background\ edit2.png");
     background-position-y: -50px;
@@ -62,25 +62,17 @@ html, body {
     color: white;
 }
 
-.char-section {
-    margin: 40px;
-}
-
-#char-options {
+/* #char-options {
     display: grid;
     align-content: space-between;
     height: 80%;
-}
+} */
 
-#stats-dis-div {
-    display: grid;
-    align-content: space-between;
-    height: 80%;
-    margin-bottom: 30px;
-}
-
-#char-options input {
-    padding: 2px;
+.char-section{
+    width: 400px;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
 }
 
 #page select, #page input {
@@ -99,13 +91,22 @@ html, body {
 }
 
 #char-options select {
-    max-width: 130px;
-}
-#char-options input {
-    max-width: 200px;
+    width: 180px;
+    height: 20px;
+    text-align: center;
 }
 
-#stats-dis-div select {
-    max-width: 40px;
+#char-stats select {
+    width: 50px;
+    height: 30px;
+    text-align: center;
 }
+
+#char-options input {
+    max-width: 180px;
+}
+
+/* #stats-dis-div select {
+    max-width: 40px;
+} */
 
