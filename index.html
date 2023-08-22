@@ -62,13 +62,31 @@
         </div>
         <div id="main-btns">
             <button class="random-btn" id="random-all">Randomize All Fields</button>
-            <button class="new-char-btn" id="createChar">Create Character</button>
+            <button class="new-char-btn" id="createChar" onClick="openPopup()">Create Character</button>
+        </div>
+
+        <div class="char-popup" id="char-popup">
+            <h2>Pop Up Title</h2>
+            <button id="close-char-popup" onClick="closePopup()">close</button>
         </div>
     </div>
 
     <script type="module" src="controller.js"></script>
     <script type="module" src="model.js"></script>
     <script type="module" src="view.js"></script>
+
+    <!-- Create character pop up -->
+    <script>
+
+        const createCharPopup = document.getElementById('char-popup')
+        function openPopup(){
+            createCharPopup.classList.add("open-char-popup");
+        }
+        function closePopup(){
+            createCharPopup.classList.remove("open-char-popup");
+        }
+
+    </script>
 
 </body>
 </html>

@@ -10,6 +10,26 @@ html, body {
     height:100%;
   }
 
+.char-popup {
+    width: 400px;
+    height: 600px;
+    background-color: gray;
+    position: absolute;
+    text-align: center;
+    padding: 10;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-char-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 #header {
     font-size: 14px;
     height: 10%;
