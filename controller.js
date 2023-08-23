@@ -15,6 +15,7 @@ const randNameButton = document.getElementById('rand-name');
 const randAllBtn = document.getElementById('random-all');
 const statsTemplateVals = document.getElementById('stats-temp-vals');
 
+const pagePopupActive = document.getElementById('page');
 //Pop up elements
 const createCharPopup = document.getElementById('char-popup')
 const popUpCharDetails = document.getElementsByClassName("popup-content");
@@ -63,6 +64,7 @@ createChar.addEventListener("click", function() {
         alert('Please enter a name');
     } else {
         createCharPopup.classList.add("open-char-popup");
+        pagePopupActive.classList.add("page-popup");
         for (let i =0; i < charOps.length; i++) {
             allChosenValues.push(charOps[i].value);
         }

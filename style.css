@@ -61,7 +61,7 @@ html, body {
     margin-bottom: 3px;
 }
 
-#whole-page {
+.whole-page {
     height: 100%;
     color: white;
     background: url("Images/dnd\ background\ edit2.png");
@@ -75,7 +75,14 @@ html, body {
     justify-content: center;
 }
 
-#whole-page button {
+.page-popup {
+    display: flex;
+    justify-content: center;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+.whole-page button {
     color: white;
     border-color: white;
     background-color: transparent;
