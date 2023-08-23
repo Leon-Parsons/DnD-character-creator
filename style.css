@@ -10,6 +10,35 @@ html, body {
     height:100%;
   }
 
+.char-popup {
+    padding-top: 50px;
+    width: 400px;
+    height: 620px;
+    background-color:  rgb(54, 52, 80);
+    background-image: url("./Images/man.png");
+    background-size: contain;
+    background-position-y: +220px;
+    background-repeat: no-repeat;
+    position: absolute;
+    text-align: center;
+    padding: 10;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.char-popup h2 {
+    padding-bottom: 20px;
+}
+
+.open-char-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 #header {
     font-size: 14px;
     height: 10%;
@@ -50,7 +79,7 @@ html, body {
     color: white;
     border-color: white;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 10px;
     padding: 7px;
     max-width: 130px;

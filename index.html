@@ -64,11 +64,36 @@
             <button class="random-btn" id="random-all">Randomize All Fields</button>
             <button class="new-char-btn" id="createChar">Create Character</button>
         </div>
+
+        <div class="char-popup" id="char-popup">
+            <h2 class="popup-content" id = "pu-name">Name: </h2>
+            <h4 class="popup-content" id = "pu-race">Race: </h4>
+            <h4 class="popup-content" id ="pu-class">Class: </h4>
+            <h4 class="popup-content" id="pu-alignment">Alignment: </h4>
+            <h4 class="popup-content" id="pu-background">Background: </h4>
+            <h4 class="popup-content" id="pu-str">Strength: </h4>
+            <h4 class="popup-content" id="pu-dex">Dexterity: </h4>
+            <h4 class="popup-content" id="pu-con">Constitution: </h4>
+            <h4 class="popup-content" id="pu-int">Intelligence: </h4>
+            <h4 class="popup-content" id="pu-wis">Wisdom: </h4>
+            <h4 class="popup-content" id="pu-char">Charisma: </h4>
+  
+            <button id="close-char-popup" onClick="closePopup()">close</button>
+        </div>
     </div>
 
     <script type="module" src="controller.js"></script>
     <script type="module" src="model.js"></script>
     <script type="module" src="view.js"></script>
+
+    <!-- Create character pop up -->
+    <script>
+        const createCharPopup = document.getElementById('char-popup')
+        function closePopup(){
+            createCharPopup.classList.remove("open-char-popup");
+            window.location.reload();
+        }
+    </script>
 
 </body>
 </html>
