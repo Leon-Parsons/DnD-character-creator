@@ -4,53 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dungeons & Dragons Character Creator</title>
     <title>Dungeons & Dragons Character Creator</title>
 </head>
 <body>
-    <div id="char-options">
-        <h2 id="details-title">Character Details</h2>
-        <h4 id = "dis-name">Name</h4>
-        <input id="name-input" title="char-name">
-        <button class="random-name" id="rand-name">Randomize</button>
-        <h4 id = "race-label">Race</h4>
-        <select class="option-dd" id="race-dd"></select>
-        <button class="rand-op-btn" id=0>Randomize</button>
-        <h4 id ="class-label">Class</h4>
-        <select class="option-dd" id="class-dd"></select>
-        <button class="rand-op-btn" id=1>Randomize</button>
-        <h4 id="alignment-label">Alignment</h4>
-        <select class="option-dd" id="alignment-dd"></select>
-        <button class="rand-op-btn" id=2>Randomize</button>
-        <h4 id = "background-label">Background</h4>
-        <select class="option-dd" id="background-dd"></select>
-        <button class="rand-op-btn" id=3>Randomize</button>
+    <div id="header">
+        <h1>Dungeons & Dragons Character Creator</h1>
+        <!-- <p>Create the character of your dreams, let the fates decide, or a little bit of both</p> -->
     </div>
-    <div id="char-stats">
-        <h2 id = "stats-title">Character Stats</h4>
-        <button class="random-btn" id="rand-stats-btn">Randomize</button>
-        <button id="stats-temp-vals">Template Values</button>
-        <h4 id="str-lb">Strength</h4>
-        <h5 class="dis-roll" id="dis-str-roll"></h5>
-        <select class="stat-dd" id="str-dd"></select>
-        <h4 id="dex-lb">Dexterity</h4>
-        <h5 class="dis-roll" id="dis-dex-roll"></h5>
-        <select class="stat-dd" id="dex-dd"></select>
-        <h4 id="con-lb">Constitution</h4>
-        <h5 class="dis-roll" id="dis-con-roll"></h5>
-        <select class="stat-dd" id="con-dd"></select>
-        <h4 id="int-lb">Intelligence</h4>
-        <h5 class="dis-roll" id="dis-int-roll"></h5>
-        <select class="stat-dd" id ="int-dd"></select>
-        <h4 id="wis-lb">Wisdom</h4>
-        <h5 class="dis-roll" id="dis-wis-roll"></h5>
-        <select class="stat-dd" id="wis-dd"></select>
-        <h4 id="char-lb">Charisma</h4>
-        <h5 class="dis-roll" id="dis-cha-roll"></h5>
-        <select class="stat-dd" id="cha-dd"></select>
-    </div>
-    <div id="main-btns">
-    <button class="random-btn" id="random-all">Randomize All Fields</button>
-    <button id="createChar">New Character</button>
+    <div id="whole-page">
+        <div id="page">
+            <div id="background-img"></div>
+            <div class="char-section" id="char-options">
+                <h2 id="details-title">Character Details</h2>
+                <h4 id = "dis-name">Name:</h4>
+                <input id="name-input" title="char-name">
+                <button class="random-name" id="rand-name">Randomize</button>
+                <h4 id = "race-label">Race:</h4>
+                <select class="option-dd" id="race-dd"></select>
+                <button class="rand-op-btn" id=0>Randomize</button>
+                <h4 id ="class-label">Class:</h4>
+                <select class="option-dd" id="class-dd"></select>
+                <button class="rand-op-btn" id=1>Randomize</button>
+                <h4 id="alignment-label">Alignment:</h4>
+                <select class="option-dd" id="alignment-dd"></select>
+                <button class="rand-op-btn" id=2>Randomize</button>
+                <h4 id = "background-label">Background:</h4>
+                <select class="option-dd" id="background-dd"></select>
+                <button class="rand-op-btn" id=3>Randomize</button>
+            </div>
+            <div class="char-section" id="char-stats">
+                    <h2 id = "stats-title">Character Stats</h4>
+                    <h4 id="str-lb">Strength:</h4>
+                    <h5 class="dis-roll" id="dis-str-roll"></h5>
+                    <select class="stat-dd" id="str-dd"></select>
+                    <h4 id="dex-lb">Dexterity:</h4>
+                    <h5 class="dis-roll" id="dis-dex-roll"></h5>
+                    <select class="stat-dd" id="dex-dd"></select>
+                    <h4 id="con-lb">Constitution:</h4>
+                    <h5 class="dis-roll" id="dis-con-roll"></h5>
+                    <select class="stat-dd" id="con-dd"></select>
+                    <h4 id="int-lb">Intelligence:</h4>
+                    <h5 class="dis-roll" id="dis-int-roll"></h5>
+                    <select class="stat-dd" id ="int-dd"></select>
+                    <h4 id="wis-lb">Wisdom:</h4>
+                    <h5 class="dis-roll" id="dis-wis-roll"></h5>
+                    <select class="stat-dd" id="wis-dd"></select>
+                    <h4 id="char-lb">Charisma:</h4>
+                    <h5 class="dis-roll" id="dis-cha-roll"></h5>
+                    <select class="stat-dd" id="cha-dd"></select>
+                <div id="stats-btns-div">
+                    <button class="random-btn" id="rand-stats-btn">Randomize</button>
+                    <button class="stats-temp-btn" id="stats-temp-vals">Template Values</button>
+                </div>
+            </div>
+        </div>
+        <div id="main-btns">
+            <button class="random-btn" id="random-all">Randomize All Fields</button>
+            <button class="new-char-btn" id="createChar">Create Character</button>
+        </div>
     </div>
 
     <script type="module" src="controller.js"></script>

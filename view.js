@@ -52,12 +52,12 @@ export function statsDisabled(val) {
 };
 
 //Displays rand stat dice roll information
-// export function displayRandRollInfo(vals) {
-//     const randTotal = Object.values(vals[2]);
-//     for(let i = 0; i < 6; i++) {
-//         randRollDis[i].textContent = 
-//         `You rolled: ${vals[0][i]}... 
-//         The roll with the lowest dice removed: ${vals[1][i]}...
-//         The sum of these three dice = ${randTotal[0][i]}`;
-//     }
-// };
+export function displayRandRollInfo(vals) {
+    const randTotal = Object.values(vals[2]);
+    for(let i = 0; i < 6; i++) {
+        randRollDis[i].textContent = 
+        `You rolled: ${vals[0][i]}... 
+        The roll with the lowest dice removed: ${vals[1][i]}...
+        The sum of these three dice = ${randTotal[0][i]}`;
+    }
+};
