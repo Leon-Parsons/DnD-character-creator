@@ -11,9 +11,14 @@ html, body {
   }
 
 .char-popup {
+    padding-top: 50px;
     width: 400px;
     height: 600px;
-    background-color: gray;
+    background-color:  rgb(54, 52, 80);
+    background-image: url("./Images/man.png");
+    background-size: contain;
+    background-position-y: +220px;
+    background-repeat: no-repeat;
     position: absolute;
     text-align: center;
     padding: 10;
@@ -22,6 +27,10 @@ html, body {
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+}
+
+.char-popup h2 {
+    padding-bottom: 20px;
 }
 
 .open-char-popup {
@@ -70,7 +79,7 @@ html, body {
     color: white;
     border-color: white;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 10px;
     padding: 7px;
     max-width: 130px;
