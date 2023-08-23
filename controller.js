@@ -15,7 +15,10 @@ const randNameButton = document.getElementById('rand-name');
 const randAllBtn = document.getElementById('random-all');
 const statsTemplateVals = document.getElementById('stats-temp-vals');
 
+//Pop up elements
+const createCharPopup = document.getElementById('char-popup')
 const popUpCharDetails = document.getElementsByClassName("popup-content");
+//
 console.log(popUpCharDetails);
 
 randAllBtn.addEventListener("click", function(){
@@ -56,9 +59,10 @@ for(let i = 0; i < statOps.length; i++) {
 //Creates array of current selected/entered values, this is passed to model
 createChar.addEventListener("click", function() {
     const allChosenValues = [charName.value];
-    if(charName.value ===''){
+    if(charName.value ===""){
         alert('Please enter a name');
     } else {
+        createCharPopup.classList.add("open-char-popup");
         for (let i =0; i < charOps.length; i++) {
             allChosenValues.push(charOps[i].value);
         }
@@ -66,9 +70,11 @@ createChar.addEventListener("click", function() {
             allChosenValues.push(statOps[i].value);
         }
         newCharObj(allChosenValues);
+        console.log(allChosenValues);
 
         for (let i = 0; i < (popUpCharDetails.length+1); i++) {
-        popUpCharDetails[i].innerHTML = (popUpCharDetails[i].innerHTML + "   " + allChosenValues[i])}
+        popUpCharDetails[i].innerHTML = (popUpCharDetails[i].innerHTML + "   " + allChosenValues[i])
+        }
     }
 });
 
